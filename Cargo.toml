@@ -9,7 +9,27 @@ opt-level = 1
 [profile.dev.package."*"]
 opt-level = 3
 
+[profile.release]
+codegen-units = 1
+lto = "thin"
+
+[profile.wasm-release]
+inherits = "release"
+opt-level = "s"
+strip = "debuginfo"
+
 [dependencies]
 bevy = { version = "0.15", features = ["wayland"] }
-bevy_asset_loader = { version = "0.22" }
+bevy_asset_loader = { version = "0.22", features = ["standard_dynamic_assets"] }
+bevy_editor_pls = { version = "0.11", git = "https://github.com/jakobhellermann/bevy_editor_pls", optional = true }
 bevy_fluent = { version = "0.11" }
+
+# https://bevyengine.org/learn/quick-start/getting-started/setup/#improve-runtime-performance-optional
+log = { version = "*", features = ["max_level_debug", "release_max_level_warn"] }
+
+[patch.crates-io]
+transform-gizmo-bevy = { git = "https://github.com/ActuallyHappening/transform-gizmo" }
+
+[features]
+default = []
+dev = ["bevy_editor_pls", "bevy/bevy_dev_tools", "bevy/dynamic_linking"]

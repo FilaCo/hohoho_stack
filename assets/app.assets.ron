@@ -1,0 +1,7 @@
+(
+    {
+        "font": File (
+            path: "fonts/Siemens-A40.ttf",
+        ),
+    }
+)
