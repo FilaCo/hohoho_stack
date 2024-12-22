@@ -23,6 +23,7 @@ bevy = { version = "0.15", features = ["wayland"] }
 bevy_asset_loader = { version = "0.22", features = ["standard_dynamic_assets"] }
 bevy_editor_pls = { version = "0.11", git = "https://github.com/jakobhellermann/bevy_editor_pls", optional = true }
 bevy_fluent = { version = "0.11" }
+leafwing-input-manager = { version = "0.16" }
 
 # https://bevyengine.org/learn/quick-start/getting-started/setup/#improve-runtime-performance-optional
 log = { version = "*", features = ["max_level_debug", "release_max_level_warn"] }
