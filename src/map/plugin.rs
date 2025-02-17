@@ -8,9 +8,7 @@ pub struct HohohoMapPlugin;
 
 impl Plugin for HohohoMapPlugin {
     fn build(&self, app: &mut App) {
-        app.register_type::<MapPosition>()
-            .register_type::<PreviousMapPosition>()
-            .register_type::<Map>()
+        app.register_type::<Map>()
             .add_systems(OnEnter(AppState::GameRunning), setup_map);
     }
 }

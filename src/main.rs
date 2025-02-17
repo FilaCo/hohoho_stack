@@ -13,10 +13,15 @@ fn main() {
     }))
     .add_plugins(HohohoPlugins);
 
-    if cfg!(feature = "dev") {
-        app.add_plugins(bevy::dev_tools::ui_debug_overlay::DebugUiPlugin)
-            // .add_plugins(bevy_editor_pls::EditorPlugin::default())
-            .add_plugins(bevy::diagnostic::FrameTimeDiagnosticsPlugin);
+    #[cfg(feature = "dev")]
+    {
+        use bevy::dev_tools::ui_debug_overlay::DebugUiPlugin;
+        use bevy::diagnostic::FrameTimeDiagnosticsPlugin;
+        use bevy_editor_pls::EditorPlugin;
+
+        app.add_plugins(DebugUiPlugin)
+            .add_plugins(EditorPlugin::default())
+            .add_plugins(FrameTimeDiagnosticsPlugin);
     }
 
     app.run();

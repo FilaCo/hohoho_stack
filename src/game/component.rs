@@ -1,9 +1,12 @@
-use bevy::prelude::{Component, Deref, DerefMut, Reflect, ReflectComponent, Vec2};
+use bevy::math::U8Vec2;
+use bevy::prelude::{Component, Deref, DerefMut};
 
-#[derive(Debug, Component, Clone, Copy, PartialEq, Default, Deref, DerefMut, Reflect)]
-#[reflect(Component)]
-pub struct Velocity(pub Vec2);
+#[derive(Debug, Component, Clone, Copy, PartialEq, Default, Deref, DerefMut)]
+pub struct Velocity(pub U8Vec2);
 
-#[derive(Debug, Component, Clone, Copy, PartialEq, Default, Deref, DerefMut, Reflect)]
-#[reflect(Component)]
-pub struct Speed(pub Vec2);
+#[derive(Debug, Component, Clone, Copy, PartialEq, Default, Deref, DerefMut)]
+pub struct Speed(pub U8Vec2);
+
+#[derive(Debug, Component, Clone, Copy, PartialEq, Default)]
+#[component(storage = "SparseSet")]
+pub struct Grounded;
