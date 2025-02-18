@@ -10,9 +10,7 @@ pub struct HohohoAppPlugin;
 
 impl Plugin for HohohoAppPlugin {
     fn build(&self, app: &mut App) {
-        app.register_type::<AppAssets>()
-            .register_type::<AppState>()
-            .init_state::<AppState>()
+        app.init_state::<AppState>()
             .add_loading_state(
                 LoadingState::new(AppState::AppLoading)
                     .continue_to_state(AppState::MenuRunning)

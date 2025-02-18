@@ -1,7 +1,6 @@
-use bevy::prelude::{Reflect, ReflectState, States};
+use bevy::prelude::States;
 
-#[derive(States, Debug, Clone, Copy, Default, Eq, PartialEq, Hash, Reflect)]
-#[reflect(State)]
+#[derive(States, Debug, Clone, Copy, Default, Eq, PartialEq, Hash)]
 pub enum MenuState {
     Main,
     #[default]

@@ -1,6 +1,5 @@
-use bevy::prelude::{Camera2d, Component, Reflect, ReflectComponent};
+use bevy::prelude::{Camera2d, Component};
 
-#[derive(Component, Debug, Reflect)]
+#[derive(Component, Debug)]
 #[require(Camera2d)]
-#[reflect(Component)]
 pub struct HohohoCamera;

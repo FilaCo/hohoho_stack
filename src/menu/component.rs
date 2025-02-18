@@ -1,10 +1,8 @@
-use bevy::prelude::{Component, Reflect, ReflectComponent};
-#[derive(Component, Debug, Reflect)]
-#[reflect(Component)]
+use bevy::prelude::Component;
+#[derive(Component, Debug)]
 pub struct OnMainMenuScreen;
 
-#[derive(Component, Debug, Reflect)]
-#[reflect(Component)]
+#[derive(Component, Debug)]
 pub enum MenuButtonAction {
     NewGame,
     Quit,
